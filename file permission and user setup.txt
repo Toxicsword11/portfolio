@@ -1,0 +1,22 @@
+create a file sample1 in /tmp folder and write the file permission adn remove the write permission of sample create a user i.e user1 and user2 and also create a group i.e 'eduction' add the the user1 and user2 to education group Login through the user1 and check file permission and give the 'read' and 'write' permission to the education group and after that logout the user1 and again login through the user2 and again modify or update in sample2 file
+
+
+touch /tmp/sample1
+ls -l /tmp/sample1
+chmod u-w /tmp/sample1
+useradd user1
+useradd user2
+passwd user1
+passwd user2
+groupadd education
+usermod -aG education user1
+usermod -aG education user2
+su - user1
+ls -l /tmp/sample1
+chown :education /tmp/sample1
+chmod 660 /tmp/sample1
+exit
+su - user2
+vi user2 (this will open the editor to close it press esc and type== :wq)
+(esc + :wq)
+cat /tmp/sample1
